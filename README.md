@@ -1,1 +1,1 @@
-# DuckGame is a test of a game
+# Rock, Papers and Scissors!

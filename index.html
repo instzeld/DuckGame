@@ -27,13 +27,17 @@
 
   <div id="container">
   <div id="board">
-    <div class="square red" ></div>
-    <div class="square yellow"></div>
-    <div class="square  green"></div>
-    <div class="square  blue" ></div>
-
+    <div class="square red" onclick="selectSquare(this)"></div>
+    <div class="square yellow"onclick="selectSquare(this)"></div>
+    <div class="square  green"onclick="selectSquare(this)"></div>
+    <div class="square  blue" onclick="selectSquare(this)"></div>
   </div>
-  <button id="button" onclick="selectRandomDiv()">Start Game</button>
+  <div class="countDown">
+  <p id="oneNumber" >1</p>  
+  <p id="twoNumber">2</p>
+  <p id="threeNumber">3</p>
+</div>
+  <button id="button" onclick="countDown()">Start Game</button>
 </div>
 
   <script src="main.js"></script>

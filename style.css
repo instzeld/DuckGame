@@ -37,6 +37,20 @@ font-family: Raleway;
   border-radius: 20px;
 
 }
+.countDown p{
+  font-size: 30px;
+  
+}
+#oneNumber{
+  display: none;
+}
+#threeNumber{
+  display: none;
+}
+#twoNumber{
+  display:none;
+}
+
 .div{
   display: flex;
   justify-content: space-between;
@@ -53,7 +67,7 @@ font-family: Raleway;
   font-size: xx-large;
   cursor: pointer;
   transition: 0.5s;
-
+  margin-top: 20px;
 }
 #container button:hover{
   opacity: 90%;

@@ -23,22 +23,28 @@ font-family: Raleway;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
+  text-align: center;
 }
 #board{
   display: grid;
   grid-template-columns: 300px 300px;
-  gap:5px;
+  gap:30px;
 }
-#cell {
-  width: 300px;
+.square{
+  width: 100%;
   height: 300px;
   cursor: pointer;  
   border-radius: 20px;
-}
 
+}
+.div{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 160px;
+}
 #container button{
-  margin-top: 50px;
+  margin-top: 0;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: none;
@@ -47,6 +53,7 @@ font-family: Raleway;
   font-size: xx-large;
   cursor: pointer;
   transition: 0.5s;
+
 }
 #container button:hover{
   opacity: 90%;
@@ -100,9 +107,75 @@ font-family: Raleway;
 
 .show {display:block;}
 
-.div{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 160px;
+
+.red{
+  background-color: rgb(233, 60, 60);
+}
+.yellow{
+  background-color: rgb(230, 230, 37);
+}
+.blue{
+  background-color: rgb(43, 43, 223);
+}
+.green{
+  background-color: rgb(144, 187, 79);
+}
+
+.blue2{
+  background-color: blue;
+  box-shadow:0 0 2px blue, 0 0 4px blue, 0 0 6px blue, 0 0 8px blue, 0 0 10px blue, 0 0 14px blue, 0 0 16px blue, 0 0 20px  blue, 0 0 30px blue;
+  animation: neon-glow4 1s ease-in-out infinite alternate;  
+}
+
+.yellow2{
+  background-color: yellow;
+  animation: neon-glow2 1s ease-in-out infinite alternate;  
+  box-shadow:0 0 2px yellow, 0 0 4px yellow, 0 0 6px yellow, 0 0 8px yellow, 0 0 10px yellow, 0 0 14px yellow, 0 0 16px yellow, 0 0 20px yellow, 0 0 30px yellow;
+
+}
+
+.green2{
+background-color: greenyellow;
+box-shadow:0 0 2px greenyellow, 0 0 4px greenyellow, 0 0 6px greenyellow, 0 0 8px greenyellow, 0 0 10px greenyellow, 0 0 14px greenyellow, 0 0 16px greenyellow, 0 0 20px greenyellow, 0 0 30px greenyellow;
+animation: neon-glow3 1s ease-in-out infinite alternate;  
+}
+.red2{
+  background-color: red;
+  box-shadow: 0 0 2px red, 0 0 4px red, 0 0 6px red, 0 0 8px red, 0 0 10px red, 0 0 14px red, 0 0 16px red, 0 0 20px red, 0 0 30px red;
+  animation: neon-glow 1s ease-in-out infinite alternate;  
+}
+
+@keyframes neon-glow {
+  from {
+    box-shadow: 0 0 2px red, 0 0 4px red, 0 0 6px red, 0 0 8px red, 0 0 10px red, 0 0 14px red, 0 0 16px red, 0 0 20px red, 0 0 30px red;
+  }
+  to {
+    box-shadow: 0 0 4px red, 0 0 6px red, 0 0 8px red, 0 0 10px red, 0 0 14px red, 0 0 16px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+}
+
+
+@keyframes neon-glow2{
+  from {
+    box-shadow: 0 0 2px yellow, 0 0 4px yellow, 0 0 6px yellow, 0 0 8px yellow, 0 0 10px yellow, 0 0 14px yellow, 0 0 16px yellow, 0 0 20px yellow, 0 0 30px yellow;
+  }
+  to {
+    box-shadow: 0 0 4px yellow, 0 0 6px yellow, 0 0 8px yellow, 0 0 10px yellow, 0 0 14px yellow, 0 0 16px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow;
+  }
+}
+@keyframes neon-glow3{
+  from {
+    box-shadow: 0 0 2px greenyellow, 0 0 4px greenyellow, 0 0 6px greenyellow, 0 0 8px greenyellow, 0 0 10px greenyellow, 0 0 14px greenyellow, 0 0 16px greenyellow, 0 0 20px greenyellow, 0 0 30px greenyellow;
+  }
+  to {
+    box-shadow: 0 0 4px greenyellow, 0 0 6px greenyellow, 0 0 8px greenyellow, 0 0 10px greenyellow, 0 0 14px greenyellow, 0 0 16pxgreenyellow, 0 0 20px greenyellow, 0 0 30px greenyellow, 0 0 40px greenyellow;
+  }
+}
+@keyframes neon-glow4{
+  from {
+    box-shadow: 0 0 2px blue, 0 0 4px blue, 0 0 6px blue, 0 0 8px blue, 0 0 10px blue, 0 0 14px blue, 0 0 16px blue, 0 0 20px blue, 0 0 30px blue;
+  }
+  to {
+    box-shadow: 0 0 4px blue, 0 0 6px blue, 0 0 8px blue, 0 0 10px blue, 0 0 14px blue, 0 0 16px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
+  }
 }

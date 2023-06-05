@@ -1,1 +1,1 @@
-# Rock, Papers and Scissors!
+# Simon says

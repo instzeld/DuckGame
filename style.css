@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   color: #f1f1f1;
-  font-family: Quicksand
+  font-family: Calibri
 }
 body{
   height: 100vh;
@@ -11,10 +11,19 @@ body{
   text-align: center; 
 }
 p:nth-child(4){
-font-family: Raleway;
+font-family: Tahoma
+}
+#text2{
+  font-size: 15px;
+  margin: 0;
 }
 .div2{
   margin-top: -50px;
+}
+#torf{
+  margin-top: 20px;
+  font-size: 40px;
+  color: greenyellow;
 }
 
 #container{
@@ -192,4 +201,18 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
   to {
     box-shadow: 0 0 4px blue, 0 0 6px blue, 0 0 8px blue, 0 0 10px blue, 0 0 14px blue, 0 0 16px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
   }
+}
+
+
+@media (max-width: 700px){
+  #board{
+    grid-template-columns: 50% 50%;
+    width: 95%;
+    margin: 10px;
+    gap:10px;
+  }
+  head,
+body{
+    overflow-x: hidden;
+}
 }

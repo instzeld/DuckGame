@@ -1,3 +1,5 @@
+let mySequency = []
+
 const idiomaIngles = {
     title: "Simon Says",
     how: "How to play:",
@@ -43,37 +45,65 @@ const idiomaIngles = {
   var numbers = []
   numbers.push(one, two, three)
   var colors = ['red', 'yellow', 'green', 'blue'];
-  var delay
   var sequency = []
-  var mySequency = {}
-  var number = Math.floor(Math.random() * square.length);
-  var rondas = 1
-
+  var btn = document.getElementById("button")
+  var torf = document.getElementById("torf")
+  var sequencys = []
+  var mySequencys = []
+  var delay = 1500
+      // setInterval(function(){ square[number].classList.remove(colors[number]+"2"); clearTimeout(myTimeOut)}, 1500)
 function selectRandomDiv() {
-  for(var i = 0; i < rondas;i++){
+  var number = Math.floor(Math.random() * square.length);
+    sequency = square[number].classList
+    sequencys.push(sequency)
+    square[number].classList.add(colors[number]+"2")
+    console.log(number)
+}
+
+function rounds () {
   for (var i = 0; i < square.length; i++) {
     square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
   }
+  btn.style.display = "none"
+  var intervalA = setInterval(function(){
+    var interval = setInterval(function(){
+      selectRandomDiv()
+    }, 1000)
+    interval
+    var timeout2 = setTimeout(function(){
+      clearTimeout(interval);
+      for (var i = 0; i < square.length; i++) {
+        square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
+      }
+    }, delay)
+    timeout2
+  }, 1000)
+  setTimeout(function(){ 
+      clearInterval(intervalA)
+  }, 3000)
 
-  square[number].classList.add(colors[number]+"2");
-  var myTimeout = setTimeout(selectRandomDiv, delay);
-  delay = 1000
-  myTimeout
-  if(square[number].classList = colors[number]+"2"){
-    clearTimeout(myTimeout)
-    setInterval(function () {square[number].classList.remove(colors[number]+"2"); square[number].classList.add(colors[number], "square")}, 1600);
-  }
-  takeSequency(square[number])
+
+
+}
+
+
+
+function compararSecuencias() {
+  if (JSON.stringify(mySequencys) === JSON.stringify(sequencys) ) {
+    torf.innerHTML = "Correct"
+  } else {
+    torf.style.color = "red"
+    torf.innerHTML = "False"
   }
 }
 
-function takeSequency(x) {
-  sequency.push(x)
-  console.log(x)
-}
 function selectSquare(x) {
   x.classList.add(x.classList[1] + "2")
+  setTimeout(function(){torf.textContent = ""; torf.style.color= "";x.classList.remove(x.classList[1] +"2");}, 600)
+  mySequency = x.classList
+  mySequencys.push(mySequency)
 
+  compararSecuencias()
 }
 function changeNumberOne() {
   for(var i = 0; i < 1; i++){
@@ -85,9 +115,7 @@ function changeNumberTwo() {
   for(var i = 0; i < 1; i++){
     numbers[1].style.display = "block"
     numbers[0].style.display = "none"
-    for (var i = 0; i < square.length; i++) {
-      square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
-    }
+
   }
 }
 function changeNumberThree() {
@@ -99,16 +127,16 @@ function changeNumberThree() {
 function deleteNumber() {
   for(var i = 0; i < 1; i++){
     numbers[2].style.display = "none"
-    selectRandomDiv()
+    rounds()
   }
 }
 
 function changeNumber() {
 
   const myTimeout1 = setTimeout(changeNumberOne, 0);
-  const myTimeout2 = setTimeout(changeNumberTwo, 1800);
-  const myTimeout3 = setTimeout(changeNumberThree, 2600);
-  const myTimeout4 = setTimeout(deleteNumber, 3400)
+  const myTimeout2 = setTimeout(changeNumberTwo, 600);
+  const myTimeout3 = setTimeout(changeNumberThree, 1100);
+  const myTimeout4 = setTimeout(deleteNumber, 1900)
   if(numbers[0].style.display = "block"){
     clearTimeout(myTimeout1)
 

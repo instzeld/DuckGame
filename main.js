@@ -1,5 +1,28 @@
-let mySequency = []
+//Declarando variables
 
+let mySequency = []
+var square = document.querySelectorAll('.square');
+var one = document.getElementById("oneNumber")
+var two = document.getElementById("twoNumber")
+var three = document.getElementById("threeNumber")
+var numbers = []
+numbers.push(one, two, three)
+var colors = ['red', 'yellow', 'green', 'blue'];
+var sequency = []
+var btn = document.getElementById("button")
+var torf = document.getElementById("torf")
+var sequencys = []
+var mySequencys = []
+var test = []
+var contador = document.getElementById("contador")
+var text = document.getElementById("text")
+var text2 = document.getElementById("text2")
+var how = document.getElementById("how")
+var rondas = "0"
+var elem
+
+
+//Cambar idioma
 const idiomaIngles = {
     title: "Simon Says",
     how: "How to play:",
@@ -21,6 +44,8 @@ const idiomaIngles = {
       }
     });
   }
+
+  //Dropdown para idioma
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -38,36 +63,37 @@ const idiomaIngles = {
       }
     }
   }
-  var square = document.querySelectorAll('.square');
-  var one = document.getElementById("oneNumber")
-  var two = document.getElementById("twoNumber")
-  var three = document.getElementById("threeNumber")
-  var numbers = []
-  numbers.push(one, two, three)
-  var colors = ['red', 'yellow', 'green', 'blue'];
-  var sequency = []
-  var btn = document.getElementById("button")
-  var torf = document.getElementById("torf")
-  var sequencys = []
-  var mySequencys = []
-  var delay = 1500
-      // setInterval(function(){ square[number].classList.remove(colors[number]+"2"); clearTimeout(myTimeOut)}, 1500)
+
+//Agarrar y cambiar color del cuadro
 function selectRandomDiv() {
   var number = Math.floor(Math.random() * square.length);
     sequency = square[number].classList
     sequencys.push(sequency)
     square[number].classList.add(colors[number]+"2")
-    console.log(number)
+    console.log(number + " Numero")
+    console.log(sequencys)
+    for(var i = 0;i < sequencys.length;i++){
+      elem = sequencys[i]
+    }
+    console.log(elem)
+
 }
 
+//Intervalos de tiempo para el juego
 function rounds () {
   for (var i = 0; i < square.length; i++) {
     square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
   }
-  btn.style.display = "none"
+  //Quitar y poner cosas cuando inicie
+  contador.style.display = "block"
+  contador.style.fontSize = "50px"
+  text.style.display = "none"
+  text2.style.display = "none"
+  how.style.display = "none"
   var intervalA = setInterval(function(){
     var interval = setInterval(function(){
       selectRandomDiv()
+
     }, 1000)
     interval
     var timeout2 = setTimeout(function(){
@@ -75,70 +101,86 @@ function rounds () {
       for (var i = 0; i < square.length; i++) {
         square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
       }
-    }, delay)
+    }, 1500)
     timeout2
   }, 1000)
-  setTimeout(function(){ 
+  rondas++
+  var delay = rondas + "000"
+  let timeout4 = setTimeout(function(){ 
       clearInterval(intervalA)
-  }, 3000)
-
-
-
+  }, delay)
+  timeout4
 }
 
-
-
-function compararSecuencias() {
-  if (JSON.stringify(mySequencys) === JSON.stringify(sequencys) ) {
-    torf.innerHTML = "Correct"
-  } else {
-    torf.style.color = "red"
-    torf.innerHTML = "False"
+function compararSecuencias(){
+  if(mySequencys.length == sequencys.length){
+      if(mySequencys[0] == sequencys[0]){
+        console.log("Correct")
+        sequencys.pop(elem)
+        mySequencys.pop(elem)
+        rounds()
+        console.log(sequencys.length)
+      } else {
+        console.log("False")
+        console.log(mySequencys)
+        console.log(sequencys)
+      }
+  } else{
+    console.log("Aun no estoy completo")
+    console.log(mySequencys.length)
+    console.log(sequencys.length)
   }
 }
 
 function selectSquare(x) {
   x.classList.add(x.classList[1] + "2")
-  setTimeout(function(){torf.textContent = ""; torf.style.color= "";x.classList.remove(x.classList[1] +"2");}, 600)
   mySequency = x.classList
   mySequencys.push(mySequency)
+  console.log(mySequencys.length)
+  console.log(sequencys.length)
 
-  compararSecuencias()
+  setTimeout(function(){   compararSecuencias();
+torf.textContent = ""; torf.style.color= "";x.classList.remove(x.classList[1] +"2"); }, 600)
 }
+
+
+
+//Cambiar los numeros y al final quitarlos
 function changeNumberOne() {
-  for(var i = 0; i < 1; i++){
+
     numbers[0].style.display = "block"
+
   
-  }
 }
 function changeNumberTwo() {
-  for(var i = 0; i < 1; i++){
+
     numbers[1].style.display = "block"
     numbers[0].style.display = "none"
 
-  }
+
 }
 function changeNumberThree() {
-  for(var i = 0; i < 1; i++){
+
     numbers[2].style.display = "block"
     numbers[1].style.display = "none"
-  }
+  
 }
 function deleteNumber() {
-  for(var i = 0; i < 1; i++){
+
     numbers[2].style.display = "none"
     rounds()
+
   }
-}
 
+//Codigo para el countdown
 function changeNumber() {
-
   const myTimeout1 = setTimeout(changeNumberOne, 0);
-  const myTimeout2 = setTimeout(changeNumberTwo, 600);
-  const myTimeout3 = setTimeout(changeNumberThree, 1100);
-  const myTimeout4 = setTimeout(deleteNumber, 1900)
+  const myTimeout2 = setTimeout(changeNumberTwo, 800);
+  const myTimeout3 = setTimeout(changeNumberThree, 1500);
+  const myTimeout4 = setTimeout(deleteNumber, 2100)
   if(numbers[0].style.display = "block"){
     clearTimeout(myTimeout1)
+        btn.style.display = "none"
 
   } else if(numbers[1].style.display = "block"){
     clearTimeout(myTimeout2)
@@ -148,8 +190,8 @@ function changeNumber() {
     clearTimeout(myTimeout4)
   }
 }
-
+//Funcion que va a ejecutar el countdown
 function countDown() {
-  setTimeout(changeNumber, 1000);
+  setTimeout(changeNumber, 100);
 }
 

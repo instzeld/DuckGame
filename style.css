@@ -10,6 +10,7 @@ body{
   background-color: rgb(39, 39, 39); 
   text-align: center; 
 }
+
 #title{
   margin-top: -50px;
 }
@@ -20,6 +21,32 @@ font-family: Tahoma
   font-size: 15px;
   margin: 0;
 }
+#againA{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#again{
+  display: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: black;
+  border: none;
+  padding: 40px;
+  text-align: center;
+  font-size: xx-large;
+  cursor: pointer;
+  transition: 0.5s; 
+}
+
+#again:hover{
+  opacity: 90%;
+  transform: scale(1.1);
+}
+
 .div2{
   margin-top: -50px;
 }
@@ -53,6 +80,8 @@ font-family: Tahoma
   font-size: 30px;
   
 }
+
+
 #oneNumber{
   display: none;
 }
@@ -63,7 +92,7 @@ font-family: Tahoma
   display:none;
 }
 
-.div{
+#div{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

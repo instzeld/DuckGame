@@ -7,8 +7,11 @@
   <title>SimonSays</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="div">
+<body >
+  <div id="againA" >
+  <button id="again" onclick="tryAgain()">Try again</button>
+</div>
+<div id="div">
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Cambiar idioma</button>
     <div id="myDropdown" class="dropdown-content">
@@ -18,13 +21,16 @@
   </div>
 </div>
   <div>
+    <div id="textA">
   <h1 id="title">Simon Says</h1>
   <p id="how">How to play:</p>
   <br>
   <p id="text">A pattern will appear in the squares below, you will need to remember the pattern and click the squares, every level the pattern will get more colors to click! Enjoy.</p>
   <br>
   <p id="text2">Recommendations: When the pattern appear, and u click every square, wait to change the color, also, dont click the squares before, this can affect the game. All the Recommendations are for more enjoyability</p>
-    <p id="contador" style="display:none; ">Test</p>
+</div>  
+  <p id="contador" style="display:none; margin-top: 50px;"></p>
+    <p id="perdiste" style="display: none; font-size: 50px; color:red; margin-top: 50px;">U lost!</p>
 </div>
 
   <div id="container">
@@ -40,7 +46,7 @@
   <p id="threeNumber">3</p>
 </div>
   <button id="button" onclick="countDown()">Start Game</button>
-  <p id="torf"></p>
+
 </div>
 
   <script src="main.js"></script>

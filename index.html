@@ -6,17 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SimonSays</title>
   <link rel="stylesheet" href="style.css">
+  <script src="  https://kit.fontawesome.com/81c9db578f.js"></script>
 </head>
 <body >
   <div id="againA" >
   <button id="again" onclick="tryAgain()">Try again</button>
 </div>
+<div id="sideBar" class="sidebar" >
+  <button class="closebutton" href="#" onclick="closeSide()">X</button>
+  <a onclick="myFunction()" class="dropbtn">Cambiar idioma</a>
+  <div id="myDropdown2" class="dropdown-content">
+    <a onclick="cambiarIdioma(idiomaIngles)">Cambiar idioma a ingles</a>
+    <a onclick="cambiarIdioma(idiomaEspanol)">Cambiar idioma a español</a>
+    </div>
+  
+  </div>
 <div id="div">
+  <a href="#" class="barsNav" onclick="openSide()"><i class="fa fa-bars"></i></a>
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Cambiar idioma</button>
     <div id="myDropdown" class="dropdown-content">
-      <button onclick="cambiarIdioma(idiomaIngles)">Cambiar idioma a ingles</button>
-      <button onclick="cambiarIdioma(idiomaEspanol)">Cambiar idioma a español</button>
+      <button onclick="cambiarIdioma(idiomaIngles);">Cambiar idioma a ingles</button>
+      <button onclick="cambiarIdioma(idiomaEspanol);">Cambiar idioma a español</button>
     </div>
   </div>
 </div>
@@ -51,5 +62,6 @@
 
   <script src="Javascript/main.js"></script>
   <script src="Javascript/Language.js"></script>
+  <script src="Javascript/navbar.js"></script>
 </body>
 </html>

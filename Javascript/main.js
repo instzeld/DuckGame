@@ -45,6 +45,7 @@ function selectRandomDiv() {
       var spliceA = sequencys.splice(rondas, x);
       spliceA
     }
+
   console.log(sequencys )
 
 
@@ -89,7 +90,7 @@ function rounds () {
   var delay = delayN + "000"
     var timeout4 = setTimeout(function(){
           clearInterval(intervalA)
-          darclick = true
+
     }, delay)
     timeout4
 }

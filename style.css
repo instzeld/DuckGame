@@ -115,6 +115,53 @@ font-family: Tahoma
   transform: scale(1.1);
 }
 
+
+.barsNav{
+  display: none;
+}
+.sidebar{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+.sidebar a{
+  padding: 20px 0px 20px 0px;
+  text-decoration: none;
+  font-size: 20px;
+  width: 50px;
+  margin-left: 20px;
+  color: #666666;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover{
+  color: aliceblue;
+}
+
+.closebutton{
+  padding: 0px 0px 0px 0px;
+  font-size: 28px;
+  margin-top: -10px;
+  color: #666666;
+  border: none;
+  margin-left: -89px;
+  background-color: inherit;
+}
+
+
+.dropbtn:hover, .dropbtn:focus {
+  opacity: 90%;
+}
+
+
 .dropbtn {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -147,6 +194,7 @@ font-family: Tahoma
   min-width: 160px;
   z-index: 1;
   margin: 5px;
+  border-radius: 15px;
 
 }
 
@@ -155,6 +203,9 @@ font-family: Tahoma
   padding: 8px 12px;
   text-decoration: none;
   display: block;
+  border: none;
+
+  width: 100%;
 }
 
 
@@ -237,6 +288,37 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
 
 
 @media (max-width: 700px){
+  .closebutton:hover{
+    color: #f1f1f1;
+    cursor: pointer;
+  }
+.dropdown{
+  display: none;
+}
+.dropbtn{
+  background-color: #111;
+}
+.dropdown-content{
+  background-color: #111;
+}
+.dropdown-content a{
+  width: 100px;
+  margin-left: -2px;
+}
+.dropdown-content:hover{
+  cursor: pointer;
+}
+
+.barsNav{
+    font-size: 19px;
+    padding: 20px;
+    color: black;
+    display: block;
+}
+.barsNav:hover{
+    background-color: rgb(113, 114, 114);
+}
+
   #board{
     grid-template-columns: 50% 50%;
     width: 95%;

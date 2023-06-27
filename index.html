@@ -19,14 +19,26 @@
     <a onclick="cambiarIdioma(idiomaIngles)">Cambiar idioma a ingles</a>
     <a onclick="cambiarIdioma(idiomaEspanol)">Cambiar idioma a español</a>
     </div>
-  
+
   </div>
 <div id="div">
   <a href="#" class="barsNav" onclick="openSide()"><i class="fa fa-bars"></i></a>
+  <div class="modosD" id="modosA">
+    <p id="game" style="display: block;">Current Gamemode: </p>
+    <p id="game1" style="display: none;">Actual Modo de juego: </p>
+  <div class="modos">
+    <button class="modosbtn"  id="modosb" onclick="modos()">Gamemodes</button>
+    <div id="modosDrop" class="modos-content">
+      <button id="random" onclick="changeMode(this)">Random</button>
+      <button id="faster"onclick="changeMode(this)">Faster Game</button>
+      <button id="normal"onclick="changeMode(this)">Normal Game</button>
+    </div>
+  </div>
+</div>
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Cambiar idioma</button>
+    <button onclick="myFunction()" class="dropbtn">Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <button onclick="cambiarIdioma(idiomaIngles);">Cambiar idioma a ingles</button>
+      <button onclick="cambiarIdioma(idiomaIngles);">Change language to english</button>
       <button onclick="cambiarIdioma(idiomaEspanol);">Cambiar idioma a español</button>
     </div>
   </div>
@@ -62,6 +74,6 @@
 
   <script src="Javascript/main.js"></script>
   <script src="Javascript/Language.js"></script>
-  <script src="Javascript/navbar.js"></script>
+  <script src="Javascript/gamemodes.js"></script>
 </body>
 </html>

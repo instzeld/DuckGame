@@ -96,7 +96,7 @@ font-family: Tahoma
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 160px;
+  width: 100%;
 }
 #container button{
   margin-top: 0;
@@ -166,7 +166,7 @@ font-family: Tahoma
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   padding: 12px;
-  font-size: 15px;
+  font-size: 20px;
   border: none;
   margin: 5px;
   border-radius: 5px;
@@ -178,18 +178,21 @@ font-family: Tahoma
   opacity: 90%;
 }
 
+.modosbtn:hover, .modosbtn:focus {
+  opacity: 90%;
+}
 
 .dropdown {
   position: relative;
   color: #000000;
   border: none;
   display: inline-block;
-
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  left: -60%;
   background-color: #f1f1f1;
   min-width: 160px;
   z-index: 1;
@@ -210,9 +213,55 @@ font-family: Tahoma
 
 
 .dropdown-content button:hover {background-color: #ddd;}
+.modos-content button:hover {background-color: #ddd;}
+.modosD{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: none;
+}
+.modosD p{
+  font-size: 20px;
+  display: flex;
+align-self: center;
+}
+.modos{
+  position: relative;
+  color: #000000;
+  border: none;
+  display: inline-block;
+}
+.modos-content button{
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border: none;
 
+  width: 100%;
+}
+
+.modos-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+  margin: 5px;
+  border-radius: 15px;
+
+}
+.modosbtn{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  font-size: 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
 .show {display:block;}
-
 
 .red{
   background-color: rgb(233, 60, 60);
@@ -287,10 +336,13 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
 }
 
 
-@media (max-width: 700px){
+@media (max-width: 1000px){
   .closebutton:hover{
     color: #f1f1f1;
     cursor: pointer;
+  }
+  .modosD{
+    display: none;
   }
 .dropdown{
   display: none;

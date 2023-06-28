@@ -28,6 +28,7 @@ font-family: Tahoma
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 #again{
   display: none;
@@ -337,7 +338,11 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
 .modos-content1 a{
   margin-bottom: -21px;
 }
-
+.resul{
+  display: none;
+  font-size: 30px;
+  margin: 20px;
+}
 @media (max-width: 1000px){
   .closebutton:hover{
     color: #f1f1f1;
@@ -360,6 +365,7 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
 }
 .dropdown-content1{
   background-color: #111;
+  display: block;
   
 }
 .dropdown-content1 a{

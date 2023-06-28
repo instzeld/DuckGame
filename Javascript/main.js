@@ -6,12 +6,20 @@ const idiomaIngles = {
   again: "Try again",
   text2: "Recommendations: When the pattern appear, and u click every square, wait to change the color, also, dont click the squares before, this can affect the game. All the Recommendations are for more enjoyability",
   button:"Start Game",
-  random: "Random",
-  faster: "Faster",
+  dropbtn2: "Language",
   dropbtn1: "Language",
   btnIdioma: "English",
   btnIdioma1: "Spanish",
-  modosb: "Gamemodes"
+  random: "Random",
+  faster: "Faster Game",
+  normal: "Normal Game",
+  random1: "Random",
+  faster1: "Faster Game",
+  normal1: "Normal Game",
+  modosb: "Gamemodes",
+  modos1: "Gamemodes",
+  resultado1: "U lost in the start",
+  resultado2: "U reach the round: "
 };
 
 const idiomaEspanol = {
@@ -22,13 +30,20 @@ const idiomaEspanol = {
   again: "Jugar denuevo",
   button: "Iniciar juego",
   text2: "Recomendaciones: Cuando aparezca el patrón y hagas clic en cada cuadrado, espera a que cambie el color, además, no hagas clic en los cuadrados antes, esto puede afectar el juego. Todas las recomendaciones son para que disfrute más",
-  random: "Aleatorio",
-  faster: "Más rápido",
-  normal: "Normal",
+  dropbtn2: "Cambiar Idioma",
   dropbtn1: "Cambiar Idioma",
   btnIdioma: "Inglés",
   btnIdioma1: "Español",
-  modosb: "Modos de Juego"
+  random: "Aleatorio",
+  faster: "Más rápido",
+  normal: "Normal",
+  random1: "Aleatorio",
+  faster1: "Más rápido",
+  normal1: "Normal",
+  modosb: "Modos de Juego",
+  modosb1: "Modos de Juego",
+  resultado1: "Perdiste en el inicio",
+  resultado2: "Alcanzaste la ronda: "
 };
 function openSide(){
   document.getElementById("sideBar").style.width = "150px"
@@ -92,11 +107,9 @@ function cambiarIdioma(idioma) {
     }
   });
   if(game.style.display == "block"){
-    console.log("español")
     game.style.display = "none"
     game1.style.display = "block"
   } else{
-    console.log("ingles")
     game.style.display = "block"
     game1.style.display = "none"
   }
@@ -155,7 +168,8 @@ var darclick = true
 var pop
 var delayN = "0"
 var wrong = false
-
+var resultado1 = document.getElementById("resultado1")
+var resultado2 = document.getElementById("resultado2")
 //Cambiar los numeros y al final quitarlos
 function changeNumberOne() {
 
@@ -234,9 +248,7 @@ function compararSecuencias(){
     for (var i = 0; i < sequencys.length; i++) {
       if (mySequencys[i] === sequencys[i]) {
         ganaste = true
-        console.log("true")
       } else {
-        console.log("false")
         wrong = true
         ganaste = false
         break
@@ -245,7 +257,6 @@ function compararSecuencias(){
     }
 
     if (ganaste === true) {
-      console.log("ganaste")
     if(pop === "random"){
       sequencys = []
       }
@@ -259,16 +270,21 @@ function compararSecuencias(){
       contador.style.display = "none"
       perdiste.style.display = "block"
       setTimeout(function(){
+        contador.style.display = "block"
         perdiste.style.display = "none"
         container.style.display="none"
         again.style.display = "block"
         againA.style.display = "flex"
+        if(rondas === 1){
+          resultado1.style.display = "block"
+        } else if(rondas >= 2){
+          resultado2.style.display = "block"
+          let truco = rondas - 1
+          resultado2.textContent = resultado2.textContent + truco
+        }
       }, 1500)
     }
-  } else {
-  console.log("Aun no estoy completo")
-
-  }
+  } 
 
 }
 
@@ -290,39 +306,36 @@ function rounds () {
   delayN++
 
   if(pop === "normal" || pop === "random"){
-    console.log(currentGame)
+    delayN += 750
   var intervalA = setInterval(function(){
 
     var interval = setInterval(function(){
       selectRandomDiv()
 
-    }, 1000)
+    }, 750)
     interval
     var timeout2 = setTimeout(function(){
       clearTimeout(interval);
       for (var i = 0; i < square.length; i++) {
         square[i].classList.remove('red2', 'yellow2', 'green2', 'blue2');
       }
-    }, 1500)
+    }, 1125)
     timeout2
-  }, 1000)
-  var delay = delayN + "000"
+  }, 750)
 
   var timeout4 = setTimeout(function(){
-    console.log("Timeout4")
         clearInterval(intervalA)
 
         darclick = true
-  }, delay)
+  }, delayN)
   timeout4
   } else if(pop === "faster"){
     delayN += 500
-    console.log(delayN)
     var intervalA = setInterval(function(){
 
       var interval = setInterval(function(){
         selectRandomDiv()
-
+        darclick = true
       }, 500)
       interval
       var timeout2 = setTimeout(function(){
@@ -336,9 +349,7 @@ function rounds () {
     }, 500)
 
     var timeout4 = setTimeout(function(){
-      console.log("Timeout4")
           clearInterval(intervalA)
-          darclick = true
     }, delayN)
     timeout4
   }
@@ -361,9 +372,9 @@ function tryAgain(){
   againA.style.display = "none"
   btn.style.display = "block"
   wrong = "false"
-
+  resultado2.style.display = "none"
+  resultado1.style.display = "none"
   currentGame.push(pop)
-  console.log(currentGame)
   drop.style.height = "58px"
 
 }
@@ -377,9 +388,7 @@ function selectSquare(x) {
     
     setTimeout(function(){   compararSecuencias();
   x.classList.remove(x.classList[1] +"2");      }, 600)
-  } else {
-    console.log("apocosi tilin")
-  }
+  }  
 }
 
 

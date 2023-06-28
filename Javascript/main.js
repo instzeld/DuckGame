@@ -270,7 +270,6 @@ function compararSecuencias(){
       contador.style.display = "none"
       perdiste.style.display = "block"
       setTimeout(function(){
-        contador.style.display = "block"
         perdiste.style.display = "none"
         container.style.display="none"
         again.style.display = "block"

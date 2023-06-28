@@ -398,3 +398,9 @@ body{
   cursor: pointer;
 }
 }
+
+@media (max-width: 400px){
+  #board{
+    width: 70%;
+  }
+}

@@ -41,7 +41,6 @@ var game1 = document.getElementById("game1")
 var currentGame = ["normal"]
 game.textContent = "Current Gamemode: " + "Normal"
 game1.textContent = "Actual Modo de Juego: " + "Normal"
-
 function changeMode(x){
   
   if(x.id == "random"){
@@ -93,11 +92,13 @@ function cambiarIdioma(idioma) {
     }
   });
   if(game.style.display == "block"){
+    console.log("español")
     game.style.display = "none"
     game1.style.display = "block"
   } else{
-    game.style.display = "none"
-    game1.style.display = "block"
+    console.log("ingles")
+    game.style.display = "block"
+    game1.style.display = "none"
   }
 }
 function myFunction() {
@@ -289,8 +290,8 @@ function rounds () {
   delayN++
 
   if(pop === "normal" || pop === "random"){
+    console.log(currentGame)
   var intervalA = setInterval(function(){
-
 
     var interval = setInterval(function(){
       selectRandomDiv()
@@ -360,9 +361,11 @@ function tryAgain(){
   againA.style.display = "none"
   btn.style.display = "block"
   wrong = "false"
-  pop = ""
-  currentGame = ["normal"]
+
+  currentGame.push(pop)
+  console.log(currentGame)
   drop.style.height = "58px"
+
 }
 
 function selectSquare(x) {

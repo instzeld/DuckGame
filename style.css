@@ -137,13 +137,9 @@ font-family: Tahoma
   font-size: 20px;
   width: 50px;
   margin-left: 20px;
-  color: #666666;
+
   display: block;
   transition: 0.3s;
-}
-
-.sidebar a:hover{
-  color: aliceblue;
 }
 
 .closebutton{
@@ -192,13 +188,12 @@ font-family: Tahoma
 .dropdown-content {
   display: none;
   position: absolute;
-  left: -60%;
   background-color: #f1f1f1;
   min-width: 160px;
   z-index: 1;
   margin: 5px;
-  border-radius: 15px;
-
+  border-radius: 15px;  
+  right: 1%;
 }
 
 .dropdown-content button{
@@ -239,7 +234,9 @@ align-self: center;
 
   width: 100%;
 }
-
+.dropdown-content1{
+  display: none;
+}
 .modos-content {
   display: none;
   position: absolute;
@@ -262,7 +259,6 @@ align-self: center;
 
 }
 .show {display:block;}
-
 .red{
   background-color: rgb(233, 60, 60);
 }
@@ -299,7 +295,11 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
   box-shadow: 0 0 2px red, 0 0 4px red, 0 0 6px red, 0 0 8px red, 0 0 10px red, 0 0 14px red, 0 0 16px red, 0 0 20px red, 0 0 30px red;
   animation: neon-glow 1s ease-in-out infinite alternate;  
 }
-
+.ga, .ga1{
+  display: none;
+  font-size: 20px;
+  margin-bottom: -30px;
+}
 @keyframes neon-glow {
   from {
     box-shadow: 0 0 2px red, 0 0 4px red, 0 0 6px red, 0 0 8px red, 0 0 10px red, 0 0 14px red, 0 0 16px red, 0 0 20px red, 0 0 30px red;
@@ -334,7 +334,9 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
     box-shadow: 0 0 4px blue, 0 0 6px blue, 0 0 8px blue, 0 0 10px blue, 0 0 14px blue, 0 0 16px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
   }
 }
-
+.modos-content1 a{
+  margin-bottom: -21px;
+}
 
 @media (max-width: 1000px){
   .closebutton:hover{
@@ -349,15 +351,22 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
 }
 .dropbtn{
   background-color: #111;
+  color:#666666;
 }
-.dropdown-content{
+.modosbtn1{
   background-color: #111;
+  color:#666666;
+  cursor: pointer;
 }
-.dropdown-content a{
-  width: 100px;
-  margin-left: -2px;
+.dropdown-content1{
+  background-color: #111;
+  
 }
-.dropdown-content:hover{
+.dropdown-content1 a{
+  background-color: #111;
+  margin: none;
+}
+.dropdown-content1:hover{
   cursor: pointer;
 }
 
@@ -381,5 +390,11 @@ animation: neon-glow3 1s ease-in-out infinite alternate;
   head,
 body{
     overflow-x: hidden;
+}
+.modos-content1{
+  background-color: #111;
+}
+.modos-content1 a{
+  cursor: pointer;
 }
 }

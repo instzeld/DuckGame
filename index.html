@@ -14,18 +14,21 @@
 </div>
 <div id="sideBar" class="sidebar" >
   <button class="closebutton" href="#" onclick="closeSide()">X</button>
-  <a onclick="myFunction()" class="dropbtn">Cambiar idioma</a>
-  <div id="myDropdown2" class="dropdown-content">
-    <a onclick="cambiarIdioma(idiomaIngles)">Cambiar idioma a ingles</a>
-    <a onclick="cambiarIdioma(idiomaEspanol)">Cambiar idioma a español</a>
+  <a class="dropbtn" id="dropbtn1">Language: </a>
+  <div id="myDropdown1" class="dropdown-content1 show">
+    <a onclick="cambiarIdioma(idiomaIngles)" id="btnIdioma">English</a>
+    <a onclick="cambiarIdioma(idiomaEspanol)" id="btnIdioma1">Spanish</a>
     </div>
-
+    <a class="modosbtn1"  id="modosb1">Gamemodes: </a>
+    <div id="modosDrop1" class="modos-content1">
+      <a id="random1" onclick="changeMode1(this)">Random</a>
+      <a id="faster1" onclick="changeMode1(this)">Faster Game</a>
+      <a id="normal1" onclick="changeMode1(this)">Normal Game</a>
+    </div>
   </div>
 <div id="div">
-  <a href="#" class="barsNav" onclick="openSide()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="barsNav" id="bars" onclick="openSide()"><i class="fa fa-bars"></i></a>
   <div class="modosD" id="modosA">
-    <p id="game" style="display: block;">Current Gamemode: </p>
-    <p id="game1" style="display: none;">Actual Modo de juego: </p>
   <div class="modos">
     <button class="modosbtn"  id="modosb" onclick="modos()">Gamemodes</button>
     <div id="modosDrop" class="modos-content">
@@ -35,11 +38,11 @@
     </div>
   </div>
 </div>
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Language</button>
+  <div class="dropdown" id="drop1">
+    <button onclick="myFunction()" class="dropbtn" id="dropbtn1">Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <button onclick="cambiarIdioma(idiomaIngles);">Change language to english</button>
-      <button onclick="cambiarIdioma(idiomaEspanol);">Cambiar idioma a español</button>
+      <button onclick="cambiarIdioma(idiomaIngles);" id="btnIdioma">English</button>
+      <button onclick="cambiarIdioma(idiomaEspanol);" id="btnIdioma1">Spanish</button>
     </div>
   </div>
 </div>
@@ -51,6 +54,9 @@
   <p id="text">A pattern will appear in the squares below, you will need to remember the pattern and click the squares, every level the pattern will get more colors to click! Enjoy.</p>
   <br>
   <p id="text2">Recommendations: When the pattern appear, and u click every square, wait to change the color, also, dont click the squares before, this can affect the game. All the Recommendations are for more enjoyability</p>
+  <br>
+  <p id="game" class="ga"style="display: block;">Current Gamemode: </p>
+  <p id="game1" class="ga1"style="display: none;">Actual Modo de juego: </p>
 </div>  
   <p id="contador" style="display:none; margin-top: 50px;"></p>
     <p id="perdiste" style="display: none; font-size: 50px; color:red; margin-top: 50px;">U lost!</p>
@@ -73,7 +79,6 @@
 </div>
 
   <script src="Javascript/main.js"></script>
-  <script src="Javascript/Language.js"></script>
   <script src="Javascript/gamemodes.js"></script>
 </body>
 </html>

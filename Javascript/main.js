@@ -8,6 +8,9 @@ const idiomaIngles = {
   button:"Start Game",
   random: "Random",
   faster: "Faster",
+  dropbtn1: "Language",
+  btnIdioma: "English",
+  btnIdioma1: "Spanish",
   modosb: "Gamemodes"
 };
 
@@ -22,6 +25,9 @@ const idiomaEspanol = {
   random: "Aleatorio",
   faster: "Más rápido",
   normal: "Normal",
+  dropbtn1: "Cambiar Idioma",
+  btnIdioma: "Inglés",
+  btnIdioma1: "Español",
   modosb: "Modos de Juego"
 };
 function openSide(){
@@ -33,25 +39,46 @@ function closeSide(){
 var game = document.getElementById("game")
 var game1 = document.getElementById("game1")
 var currentGame = ["normal"]
-game.textContent = "Current Gamemode: " + normal.textContent
+game.textContent = "Current Gamemode: " + "Normal"
 game1.textContent = "Actual Modo de Juego: " + "Normal"
+
 function changeMode(x){
   
   if(x.id == "random"){
     random1 = random.textContent
     currentGame.push(random.id)
-    console.log(currentGame)
     random2 = "Aleatorio"
   } else if(x.id == "faster"){
     random1 = faster.textContent
     currentGame.push(faster.id)
-    console.log(currentGame)
     random2 = "Más rápido"
   } else{
     random1 = normal.textContent
     currentGame.push(normal.id)
-    console.log(currentGame)
     random2 = "Normal"
+  }
+
+  game1.textContent = "Actual Modo de Juego: " + random2
+  game.textContent = "Current Gamemode: " + random1
+}
+function changeMode1(x){
+  
+  if(x.id == "random1"){
+    random1 = random.textContent
+    currentGame.push(random.id)
+    random2 = "Aleatorio"
+    document.getElementById("sideBar").style.width = "0"
+
+  } else if(x.id == "faster1"){
+    random1 = faster.textContent
+    currentGame.push(faster.id)
+    random2 = "Más rápido"
+    document.getElementById("sideBar").style.width = "0"
+  } else{
+    random1 = normal.textContent
+    currentGame.push(normal.id)
+    random2 = "Normal"
+    document.getElementById("sideBar").style.width = "0"
   }
   game1.textContent = "Actual Modo de Juego: " + random2
   game.textContent = "Current Gamemode: " + random1
@@ -68,15 +95,15 @@ function cambiarIdioma(idioma) {
   if(game.style.display == "block"){
     game.style.display = "none"
     game1.style.display = "block"
-  } else if(game1.style.display == "block"){
-    game.style.display = "block"
-    game1.style.display = "none"
+  } else{
+    game.style.display = "none"
+    game1.style.display = "block"
   }
 }
 function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show")
+    document.getElementById("myDropdown1").classList.toggle("show")
 
-    document.getElementById("myDropdown").classList.toggle("show")
-    document.getElementById("myDropdown2").classList.toggle("show")
 }
 
 
@@ -92,6 +119,8 @@ window.onclick = function(event) {
     }
   }
 }
+
+
 //Declarando variables
 var container = document.getElementById("container")
 var one = document.getElementById("oneNumber")
@@ -123,20 +152,8 @@ var x
 var a = -1
 var darclick = true
 var pop
-//Gamemodes
-
-
-//Agarrar y cambiar color del cuadro
-
-//Intervalos de tiempo para el juego
-
 var delayN = "0"
-
-
 var wrong = false
-
-
-
 
 //Cambiar los numeros y al final quitarlos
 function changeNumberOne() {

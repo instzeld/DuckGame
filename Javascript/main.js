@@ -278,8 +278,13 @@ function compararSecuencias(){
           resultado1.style.display = "block"
         } else if(rondas >= 2){
           resultado2.style.display = "block"
-          let truco = rondas - 1
-          resultado2.textContent = resultado2.textContent + truco
+          var truco = rondas - 1
+          if(title.textContent === "Simon Says"){
+            resultado2.textContent = "U reach the round: " + truco
+          } else if(title.textContent === "Simon Dice"){
+            resultado2.textContent = "Has alcanzado la ronda: " + truco
+          }
+          console.log(truco)
         }
       }, 1500)
     }
